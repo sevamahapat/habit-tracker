@@ -4,8 +4,8 @@ A small, gentle habit tracker built with React + Vite. Calendar-first
 interface, flexible per-habit schedules, streaks with grace days, a year
 heatmap, optional cloud sync, and installable as a PWA.
 
-> 🌐 **Live demo:** <!-- TODO: paste your deployed URL here after deployment -->
-> _Add your deployed URL here_
+> 🌐 **Live demo:**
+> [_Add your deployed URL here_](https://habit-tracker-omvenf3z7-sevamahapats-projects.vercel.app/)
 
 ![Bloom favicon](public/favicon.svg)
 

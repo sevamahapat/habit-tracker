@@ -1,0 +1,20 @@
+{
+  "name": "Bloom — Habit Tracker",
+  "short_name": "Bloom",
+  "description": "A small, gentle habit tracker that syncs across your devices.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fffaf5",
+  "theme_color": "#e87aab",
+  "categories": ["productivity", "lifestyle", "health"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+/* Theme variants — override the color system defined in variables.css.
+   Each theme reuses the same var names so components don't need to change. */
+
+[data-theme='bloom'] {
+  --pink-50: #fff1f6;
+  --pink-100: #ffe1ec;
+  --pink-200: #f7c4d8;
+  --pink-300: #e87aab;
+  --pink-400: #d4537e;
+  --lav-50: #f7f1ff;
+  --lav-100: #e5d8f9;
+  --lav-200: #d0bbf2;
+  --lav-300: #a97de6;
+  --lav-400: #8a5dd1;
+  --cream: #fffaf5;
+  --white: #ffffff;
+  --ink: #3a2a3f;
+  --ink-soft: #6b5a72;
+  --muted: #b5a6c0;
+}
+
+[data-theme='sage'] {
+  --pink-50: #f2f8f1;
+  --pink-100: #dff0dc;
+  --pink-200: #b5dab0;
+  --pink-300: #7cb87a;
+  --pink-400: #4f8b5e;
+  --lav-50: #fdfaf2;
+  --lav-100: #f5ecd7;
+  --lav-200: #e6d3a8;
+  --lav-300: #c7a85f;
+  --lav-400: #8f7637;
+  --cream: #f9f7ef;
+  --white: #ffffff;
+  --ink: #2d3a2e;
+  --ink-soft: #5d6b5a;
+  --muted: #a9b2a4;
+}
+
+[data-theme='sunset'] {
+  --pink-50: #fff3ec;
+  --pink-100: #ffe1d1;
+  --pink-200: #fcbe9e;
+  --pink-300: #f08659;
+  --pink-400: #d65d2c;
+  --lav-50: #fff8ee;
+  --lav-100: #ffe9c4;
+  --lav-200: #fbcf7f;
+  --lav-300: #e5a13b;
+  --lav-400: #b97a18;
+  --cream: #fff8f2;
+  --white: #ffffff;
+  --ink: #3f2a20;
+  --ink-soft: #74554a;
+  --muted: #c6a99b;
+}
+
+[data-theme='ocean'] {
+  --pink-50: #eaf6fb;
+  --pink-100: #cdeaf5;
+  --pink-200: #8fcfe8;
+  --pink-300: #3fa0d3;
+  --pink-400: #1e6f9a;
+  --lav-50: #eef8f5;
+  --lav-100: #cde9e1;
+  --lav-200: #8ed0bf;
+  --lav-300: #3fa187;
+  --lav-400: #1e6f58;
+  --cream: #f3f9fb;
+  --white: #ffffff;
+  --ink: #1a2d3a;
+  --ink-soft: #4a6574;
+  --muted: #9cb3be;
+}
+
+[data-theme='midnight'] {
+  --pink-50: #1e1a2e;
+  --pink-100: #27223a;
+  --pink-200: #3a2f56;
+  --pink-300: #c794d9;
+  --pink-400: #e0a9f0;
+  --lav-50: #1a1a2c;
+  --lav-100: #23233a;
+  --lav-200: #3a3a56;
+  --lav-300: #9a8ce4;
+  --lav-400: #c4b8ff;
+  --cream: #141222;
+  --white: #24223a;
+  --ink: #f3eef7;
+  --ink-soft: #c0b7d0;
+  --muted: #7c7291;
+  --shadow-soft: 0 6px 20px -8px rgba(0, 0, 0, 0.55);
+  --shadow-lift: 0 12px 30px -10px rgba(0, 0, 0, 0.65);
+}
+
+[data-theme='mono'] {
+  --pink-50: #f4f4f5;
+  --pink-100: #e4e4e7;
+  --pink-200: #c4c4c9;
+  --pink-300: #52525b;
+  --pink-400: #27272a;
+  --lav-50: #fafafa;
+  --lav-100: #ededed;
+  --lav-200: #c8c8c8;
+  --lav-300: #71717a;
+  --lav-400: #3f3f46;
+  --cream: #fafafa;
+  --white: #ffffff;
+  --ink: #18181b;
+  --ink-soft: #52525b;
+  --muted: #a1a1aa;
+}

@@ -1,0 +1,35 @@
+:root {
+  /* Pink & lavender palette */
+  --pink-50: #fff1f6;
+  --pink-100: #ffe1ec;
+  --pink-200: #f7c4d8;
+  --pink-300: #e87aab;
+  --pink-400: #d4537e;
+
+  --lav-50: #f7f1ff;
+  --lav-100: #e5d8f9;
+  --lav-200: #d0bbf2;
+  --lav-300: #a97de6;
+  --lav-400: #8a5dd1;
+
+  --cream: #fffaf5;
+  --white: #ffffff;
+  --ink: #3a2a3f;
+  --ink-soft: #6b5a72;
+  --muted: #b5a6c0;
+
+  /* Layout */
+  --radius-card: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 6px 20px -8px rgba(168, 125, 230, 0.25);
+  --shadow-lift: 0 12px 30px -10px rgba(232, 122, 171, 0.3);
+
+  --border-weekday: 1.5px solid var(--lav-100);
+  --border-weekend: 1.5px solid var(--pink-100);
+
+  /* Fonts */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+}

@@ -5,7 +5,7 @@ interface, flexible per-habit schedules, streaks with grace days, a year
 heatmap, optional cloud sync, and installable as a PWA.
 
 > 🌐 **Live demo:**
-> [_Add your deployed URL here_](https://habit-tracker-omvenf3z7-sevamahapats-projects.vercel.app/)
+> [ Bloom ](https://habit-tracker-omvenf3z7-sevamahapats-projects.vercel.app/)
 
 ![Bloom favicon](public/favicon.svg)
 

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { supabase } from '../lib/supabase.js'
 
 const DEBOUNCE_MS = 1200
@@ -15,7 +15,7 @@ const isMeaningful = (payload) => {
 }
 
 export function useCloudSync({ user, payload, applyPayload }) {
-  // hydration: 'idle' | 'pulling' | 'needsMigration' | 'ready'
+  // hydration: 'idle' | 'pulling' | 'ready'
   const [hydration, setHydration] = useState('idle')
   const [serverPayload, setServerPayload] = useState(null)
   const [pushing, setPushing] = useState(false)
@@ -51,14 +51,9 @@ export function useCloudSync({ user, payload, applyPayload }) {
           applyPayload(server)
           setServerPayload(server)
           setLastSyncedAt(data.updated_at || new Date().toISOString())
-          setHydration('ready')
-        } else if (isMeaningful(payload)) {
-          // Server empty, local has data → ask the user before uploading.
-          setHydration('needsMigration')
-        } else {
-          // Both empty → nothing to do, treat as ready.
-          setHydration('ready')
         }
+        // Server empty → fall through; the push effect will upload local data.
+        setHydration('ready')
       })
     return () => {
       cancelled = true
@@ -99,39 +94,10 @@ export function useCloudSync({ user, payload, applyPayload }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.id, hydration, payload])
 
-  const acceptMigration = useCallback(async () => {
-    if (!user || !supabase) return
-    const { error } = await supabase.from('user_data').upsert(
-      {
-        user_id: user.id,
-        payload,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: 'user_id' },
-    )
-    if (error) {
-      console.error('[bloom] migration push failed', error)
-      alert('Could not upload your data. Check the console for details.')
-      return
-    }
-    setServerPayload(payload)
-    setLastSyncedAt(new Date().toISOString())
-    setHydration('ready')
-  }, [user, payload])
-
-  const declineMigration = useCallback(() => {
-    // Keep server empty; treat local as fresh and let normal sync take over.
-    // But the local data is still there — only the user can decide to wipe it.
-    skipNextPushRef.current = false
-    setHydration('ready')
-  }, [])
-
   return {
     hydration,
     pushing,
     lastSyncedAt,
     serverPayload,
-    acceptMigration,
-    declineMigration,
   }
 }

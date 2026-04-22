@@ -10,7 +10,6 @@ import YearHeatmap from './components/YearHeatmap.jsx'
 import TagFilter from './components/TagFilter.jsx'
 import AuthGate from './components/AuthGate.jsx'
 import AccountMenu, { GuestPill } from './components/AccountMenu.jsx'
-import MigrationPrompt from './components/MigrationPrompt.jsx'
 import PasswordRecovery from './components/PasswordRecovery.jsx'
 import InstallButton from './components/InstallButton.jsx'
 import { useHabits, habitTargetAmount } from './hooks/useHabits.js'
@@ -42,13 +41,6 @@ const isInteractiveTarget = (el) => {
   if (!el) return false
   const tag = el.tagName
   return tag === 'BUTTON' || tag === 'A' || tag === 'SUMMARY'
-}
-
-const summarizePayload = (payload) => {
-  const habits = payload?.habits?.habits?.length ?? 0
-  const checks = payload?.checks ? Object.keys(payload.checks).length : 0
-  const tags = payload?.habits?.tags?.length ?? 0
-  return { habits, checks, tags }
 }
 
 export default function App() {
@@ -215,7 +207,7 @@ export default function App() {
     if (firstRun) return
     if (!showApp) return
     if (view !== 'calendar') return
-    if (sync.hydration === 'pulling' || sync.hydration === 'needsMigration') return
+    if (sync.hydration === 'pulling') return
     const onKey = (e) => {
       if (isTypingTarget(e.target)) return
       if (e.metaKey || e.ctrlKey || e.altKey) return
@@ -326,21 +318,6 @@ export default function App() {
           <Loader2 size={28} className="boot__spin" />
           <p className="boot__label">Pulling your habits from the cloud…</p>
         </div>
-      </>
-    )
-  }
-
-  if (sync.hydration === 'needsMigration') {
-    return (
-      <>
-        <div className="blob blob--pink" aria-hidden="true" />
-        <div className="blob blob--lav" aria-hidden="true" />
-        <div className="blob blob--cream" aria-hidden="true" />
-        <MigrationPrompt
-          summary={summarizePayload(cloudPayload)}
-          onAccept={sync.acceptMigration}
-          onCancel={() => auth.signOut()}
-        />
       </>
     )
   }

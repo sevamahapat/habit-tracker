@@ -467,12 +467,12 @@ export default function App() {
           open={sidebarOpen}
           onClose={() => setSidebarOpen(false)}
         />
-      </div>
 
-      <div
-        className={`backdrop ${sidebarOpen ? 'backdrop--open' : ''}`}
-        onClick={() => setSidebarOpen(false)}
-      />
+        <div
+          className={`backdrop ${sidebarOpen ? 'backdrop--open' : ''}`}
+          onClick={() => setSidebarOpen(false)}
+        />
+      </div>
 
       <button
         className="sidebar-fab"
